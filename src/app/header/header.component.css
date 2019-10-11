@@ -1,0 +1,47 @@
+
+.caret-down {
+  transform: rotate(90deg) scale(1.5);
+  display: inline-block;
+
+}
+.header {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  padding-left: 10px;
+  padding: 10px 0;
+}
+
+.brand-navbar-wrapper {
+ display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.navigation-container {
+  align-self: center;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.nav-item-link {
+  color: black;
+}
+
+.navbar-brand {
+ font-size: 20px;
+}
+
+.nav-item {
+  margin-right: 10px;
+  color: black;
+}
+
+.manage {
+  margin-right: 10px;
+}

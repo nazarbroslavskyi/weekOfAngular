@@ -1,0 +1,19 @@
+.shopping-list-container {
+ /*margin-left: 10px;*/
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 10px;
+}
+
+.shopping-list-item {
+  padding: 5px 5px;
+  border: 1px solid gainsboro;
+}
+
+.shopping-list-item:nth-child(2n) {
+  border-top: none;
+}
+
+.shopping-list-item:hover  {
+  background-color: whitesmoke;
+}

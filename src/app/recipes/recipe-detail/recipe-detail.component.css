@@ -1,0 +1,33 @@
+.detail-wrapper {
+ /*margin-left: 10px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.caret-down {
+  transform: rotate(90deg) scale(1.5);
+  display: inline-block;
+  position: relative;
+  left: 5px;
+}
+
+.recipe-and-image {
+ display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.img-of-recipe {
+  max-width: 100px;
+  max-height: 100px;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.manage-button {
+  height: 38px;
+  align-self: center;
+}
