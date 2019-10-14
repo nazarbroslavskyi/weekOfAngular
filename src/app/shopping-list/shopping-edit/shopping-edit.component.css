@@ -1,0 +1,22 @@
+.form-group {
+  /*display: flex;*/
+  /*align-items: center;*/
+}
+
+.label-of-name, .label-of-amount {
+  /*min-width: 60px;*/
+}
+
+.create-delete-recipe-form {
+ display: flex;
+  justify-content: space-between;
+}
+
+.name-input {
+ width: 50%;
+}
+
+.delete-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}

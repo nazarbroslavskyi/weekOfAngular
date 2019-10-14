@@ -3,6 +3,8 @@
   max-width: 1100px;
   margin: 0 auto;
   padding-left: 10px;
+  margin-top: 20px;
+  padding-right: 10px;
 }
 
 .shopping-list-item {
