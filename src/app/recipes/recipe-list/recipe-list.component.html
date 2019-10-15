@@ -4,5 +4,5 @@
 <hr>
 <div>
   <app-recipe-item [recipe]="recipe"
-    *ngFor="let recipe of recipes"></app-recipe-item>
+    (recipeSelected)="onRecipeSelected(recipe)" *ngFor="let recipe of recipes"></app-recipe-item>
 </div>

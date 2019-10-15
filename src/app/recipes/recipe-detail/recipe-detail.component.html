@@ -1,12 +1,12 @@
 <div class="detail-wrapper">
-  <h4>Recipe Name</h4>
+  <h4>{{recipe.name}}</h4>
   <div class="recipe-and-image">
     <button class="btn btn-primary manage-button">Manage Recipe <span class="caret-down"> &#x2023;</span></button>
-    <img src="https://shewearsmanyhats.com/wp-content/uploads/2015/10/garlic-shrimp-recipe-1.jpg" class="img-of-recipe" alt="">
+    <img [src]="recipe.imagePath" class="img-of-recipe" alt="">
   </div>
 
   <div>
-    <h5 class="description-info">Description</h5>
+    <h5 class="description-info">{{recipe.description}}</h5>
   </div>
   <div class="ingrediens-wrapper">
     <h5 class="ingredients-header">Ingredients</h5>
