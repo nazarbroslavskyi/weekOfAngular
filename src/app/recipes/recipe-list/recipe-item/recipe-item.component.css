@@ -15,3 +15,7 @@
 .recipe-description-wrapper:hover {
   background-color: aliceblue;
 }
+
+.active-recipe-item {
+  background-color: lightgray;
+}

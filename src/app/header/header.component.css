@@ -10,7 +10,6 @@
   align-items: center;
   background-color: whitesmoke;
   padding-left: 10px;
-  padding: 10px 0;
 }
 
 .brand-navbar-wrapper {
@@ -20,28 +19,55 @@
 }
 
 .navigation-container {
-  align-self: center;
+  /*align-self: center;*/
 }
 .navigation {
   display: flex;
   justify-content: space-between;
   margin-left: 10px;
   margin-bottom: 0;
+  height: 100%;
 }
 
 .nav-item-link {
   color: black;
+  display: flex;
+  /* vertical-align: middle; */
+  /* text-align: center; */
+  /* display: flex; */
+  justify-content: center;
+  /* align-content: center; */
+  flex-direction: column;
 }
 
 .navbar-brand {
  font-size: 20px;
+  padding: 10px;
 }
 
 .nav-item {
   margin-right: 10px;
   color: black;
+  display: flex;
 }
 
 .manage {
   margin-right: 10px;
+}
+
+.show + .dropdown-menu {
+  display: block;
+}
+
+.do-not-focus:focus {
+ box-shadow: none;
+}
+
+.dropdown-item {
+  padding: 5px;
+}
+
+.active-link {
+ background-color: lightgray;
+  padding: 5px;
 }

@@ -5,13 +5,23 @@
     </div>
     <nav class="navigation-container">
       <ul class="navigation">
-        <li class="nav-item"><a class="nav-item-link" href="#" (click)="onSelect('recipe')">Recipes</a></li>
-        <li class="nav-item"><a class="nav-item-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+        <li class="nav-item"><a class="nav-item-link" routerLink="/recipes" routerLinkActive="active-link">Recipes</a></li>
+        <li class="nav-item"><a class="nav-item-link" routerLink="/shopping-list" routerLinkActive="active-link">Shopping List</a></li>
       </ul>
     </nav>
   </div>
   <div class="manage">
-    <p>Manage <span class="caret-down">&#x2023;</span></p>
+<!--    <p>Manage <span class="caret-down">&#x2023;</span></p>-->
+    <div class="dropdown manage-dropdown">
+      <button class="btn do-not-focus dropdown-toggle" appDropdown type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Recipe
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">To Shopping List</a>
+        <a class="dropdown-item" href="#">Edit Recipe</a>
+        <a class="dropdown-item" href="#">Delete Recipe</a>
+      </div>
+    </div>
   </div>
 
 </header>

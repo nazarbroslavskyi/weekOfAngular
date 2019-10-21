@@ -1,14 +1,30 @@
 <div class="detail-wrapper">
   <h4>{{recipe.name}}</h4>
+  <img [src]="recipe.imagePath" class="img-of-recipe" alt="">
   <div class="recipe-and-image">
-    <button class="btn btn-primary manage-button">Manage Recipe <span class="caret-down"> &#x2023;</span></button>
-    <img [src]="recipe.imagePath" class="img-of-recipe" alt="">
+    <div class="dropdown manage-dropdown">
+      <button class="btn btn-secondary dropdown-toggle" appDropdown type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Recipe
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" (click)="addToShoppingLIst(recipe)">To Shopping List</a>
+        <a class="dropdown-item" (click)="onEditRecipe()">Edit Recipe</a>
+        <a class="dropdown-item">Delete Recipe</a>
+      </div>
+    </div>
+
+
   </div>
 
   <div>
-    <h5 class="description-info">{{recipe.description}}</h5>
+    <h6 class="description-info">{{recipe.description}}</h6>
   </div>
   <div class="ingrediens-wrapper">
     <h5 class="ingredients-header">Ingredients</h5>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.name}} ({{ingredient.amount}})
+      </li>
+    </ul>
   </div>
 </div>

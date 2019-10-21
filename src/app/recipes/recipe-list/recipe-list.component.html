@@ -1,7 +1,7 @@
-<div class="create-recipe">
+<div class="create-recipe" (click)="onNewRecipe()">
   <button class="btn btn-success">New Recipe</button>
 </div>
 <hr>
 <div>
-  <app-recipe-item [recipe]="recipe" *ngFor="let recipe of recipes"></app-recipe-item>
+  <app-recipe-item [recipe]="recipe" *ngFor="let recipe of recipes; index as i" [index]="i"></app-recipe-item>
 </div>

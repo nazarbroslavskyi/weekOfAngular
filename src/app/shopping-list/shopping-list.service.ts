@@ -19,4 +19,10 @@ private ingredients: Ingredient[] = [
     console.log(this.ingredients);
     this.ingredientAdded.emit(this.ingredients.slice());
   }
+
+  onAddArrayOfIngredients(ingredient: Ingredient[]) {
+    this.ingredients.push(...ingredient);
+    console.log(this.ingredients);
+    this.ingredientAdded.emit(this.ingredients.slice());
+  }
 }
