@@ -18,7 +18,11 @@
 
 .delete-button {
   margin-left: 10px;
-  margin-right: 10px;
+
+}
+
+.clear-buton {
+  margin-left: 10px;
 }
 
 .invalid-message-amount {

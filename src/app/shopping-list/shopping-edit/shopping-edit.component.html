@@ -26,16 +26,16 @@
           [(ngModel)]="amountInput"
           pattern="^[1-9]+[0-9]*$"
           name="amountInput">
-        <p class="invalid-message-amount" *ngIf="!amntInput.valid && amntInput.touched">* Amount of ingredients should be a number</p>
+        <p class="invalid-message-amount" *ngIf="!amntInput.valid && amntInput.touched">* Amount of ingredients should be a number more than zero</p>
       </div>
     </div>
     <div class="button-options">
-      <button class="btn btn-success" type="submit" [disabled]="!addIngredientsForm.valid">Add</button>  <!--(click)="onAddIngredients()"-->
-      <button class="btn btn-danger delete-button" (click)="onDeleteIngredients()" type="button">Delete</button>
-      <button class="btn btn-primary" type="button" (click)="onClearInputs()" >Clear</button>
+      <button class="btn btn-success" type="submit" [disabled]="!addIngredientsForm.valid">{{ !editMode ? 'Add': 'Update' }}</button>  <!--(click)="onAddIngredients()"-->
+      <button class="btn btn-danger delete-button" *ngIf="editMode" (click)="onDeleteIngredients()" type="button">Delete</button>
+      <button class="btn btn-primary clear-buton" type="button" (click)="onClearInputs()" >Clear</button>
     </div>
   </form>
 </section>
 
-<p>{{nameInput}}</p>
-<p>{{amountInput}}</p>
+<!--<p>{{nameInput}}</p>-->
+<!--<p>{{amountInput}}</p>-->

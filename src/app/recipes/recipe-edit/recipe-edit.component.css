@@ -1,0 +1,20 @@
+.recipe-edit-form {
+ margin-left: 20px;
+}
+
+.cancel-of-edit-recipe {
+  margin-left: 10px;
+}
+
+.add-ingredients-field {
+  display: flex;
+  margin-top: 10px;
+}
+
+.amnt-of-ingredients {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50px;
+  padding: 0;
+  padding-left: 5px;
+}

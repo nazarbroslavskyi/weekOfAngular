@@ -18,4 +18,5 @@
 
 .shopping-list-item:hover  {
   background-color: whitesmoke;
+  cursor: pointer;
 }

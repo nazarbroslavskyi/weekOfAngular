@@ -10,9 +10,14 @@ private ingredients: Ingredient[] = [
   ];
 
   ingredientAdded = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
 
   getIngredients() {
     return this.ingredients.slice();
+  }
+
+  getIngredient(indexOfIngredient: number) {
+    return this.ingredients[indexOfIngredient];
   }
 
   onAddIngredient(ingredient: Ingredient) {
@@ -24,6 +29,16 @@ private ingredients: Ingredient[] = [
   onAddArrayOfIngredients(ingredient: Ingredient[]) {
     this.ingredients.push(...ingredient);
     console.log(this.ingredients);
+    this.ingredientAdded.next(this.ingredients.slice());
+  }
+
+  onupdateIngredient(indexOfIngredient: number, newIngredient: Ingredient) {
+    this.ingredients[indexOfIngredient] = newIngredient;
+    this.ingredientAdded.next(this.ingredients.slice());
+  }
+
+  onDeleteIngerdient(indexOfIngredient: number) {
+    this.ingredients.splice(indexOfIngredient, 1);
     this.ingredientAdded.next(this.ingredients.slice());
   }
 }
