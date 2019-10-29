@@ -4,7 +4,8 @@ import { Component,
   ViewChild,
   ElementRef,
   Output,
-  EventEmitter } from '@angular/core';
+  EventEmitter,
+  OnDestroy} from '@angular/core';
 import { ShoppingListService } from '../shopping-list.service';
 import {Ingredient} from '../../shared/ingredient.model';
 import {NgForm} from '@angular/forms';
@@ -15,7 +16,7 @@ import {Subscription} from 'rxjs';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent implements OnInit {
+export class ShoppingEditComponent implements OnInit, OnDestroy {
   // @ViewChild('nameInput', {static: false}) nameInputRef: ElementRef;
   // @ViewChild('amountInput', {static: false}) amntInputRef: ElementRef;
   @ViewChild('addIngredientsForm', { static: false }) slForm: NgForm;
@@ -42,7 +43,7 @@ export class ShoppingEditComponent implements OnInit {
     );
   }
 
-  onAddIngredients(form: NgForm) {
+  public onAddIngredients(form: NgForm) {
     // this.addedIngredient.emit({name: this.nameInputRef.nativeElement.value, amount: this.amntInputRef.nativeElement.value});
     if (this.editMode) {
       this.shoppingLIstService.onupdateIngredient(this.editedItemIndex, new Ingredient(form.value.nameInput, form.value.amountInput));
@@ -58,15 +59,19 @@ export class ShoppingEditComponent implements OnInit {
     this.onClearInputs();
   }
 
-  onClearInputs() {
+  private onClearInputs() {
     this.slForm.reset();
     this.editMode = false;
   }
 
-  onSubmitForm(formOfIngredients: NgForm, name, amnt) {
+  public onSubmitForm(formOfIngredients: NgForm, name, amnt) {
     this.onAddIngredients(formOfIngredients);
     console.log(formOfIngredients.value);
     console.log("name", name);
     console.log("amnt", amnt);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

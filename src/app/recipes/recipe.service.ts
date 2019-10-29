@@ -1,9 +1,14 @@
 import { Recipe } from './recipe.model';
 import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
-
+import {Subject} from 'rxjs';
+//
+// @Injectable({
+//   providedIn: 'root',
+// })
 export class RecipeService {
   private selectedRecipe = new EventEmitter<Recipe>();
+  public recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'This is simply a test', 'https://assets.blog.foodnetwork.ca/imageserve/wp-content/' +
@@ -32,5 +37,20 @@ export class RecipeService {
     return this.recipes[id];
   }
 
-}
+  addNewRecipe(newRecipe: Recipe) {
+    this.recipes.push(newRecipe);
+    console.log(this.recipes);
+    console.log(newRecipe);
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
+  updateRecipes(indexOfRecipe: number, udateRecipe: Recipe) {
+    this.recipes[indexOfRecipe] = udateRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  public deleteRecipe(indexOfRecipe: number): void {
+    this.recipes.splice(indexOfRecipe, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+}

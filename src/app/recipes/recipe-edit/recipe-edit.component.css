@@ -4,6 +4,7 @@
 
 .cancel-of-edit-recipe {
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .add-ingredients-field {
@@ -18,3 +19,19 @@
   padding: 0;
   padding-left: 5px;
 }
+
+.add-ingredien-button {
+ margin-top: 10px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.img-of-recipe {
+  width: 50%;
+  display: block;
+  margin-top: 5px;
+}
+
