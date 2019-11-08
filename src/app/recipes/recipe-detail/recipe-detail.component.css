@@ -33,7 +33,7 @@
   align-self: center;
 }
 
-.show + .dropdown-menu {
+.show  .dropdown-menu {
   display: block;
 }
 

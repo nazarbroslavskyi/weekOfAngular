@@ -12,14 +12,14 @@
   </div>
   <div class="manage">
 <!--    <p>Manage <span class="caret-down">&#x2023;</span></p>-->
-    <div class="dropdown manage-dropdown">
-      <button class="btn do-not-focus dropdown-toggle" appDropdown type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Manage Recipe
-      </button>
+    <div class="dropdown manage-dropdown" appDropdown>
+      <input class="btn do-not-focus dropdown-toggle"
+              type="button" id="dropdownMenuButton"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Manage Recipe">
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">To Shopping List</a>
-        <a class="dropdown-item" href="#">Edit Recipe</a>
-        <a class="dropdown-item" href="#">Delete Recipe</a>
+        <a class="dropdown-item" (click)="onSaveData()">Save Data</a>
+        <a class="dropdown-item" (click)="onFetchData()">Fetch Data</a>
+
       </div>
     </div>
   </div>

@@ -2,10 +2,10 @@
   <h4>{{recipe.name}}</h4>
   <img [src]="recipe.imagePath" class="img-of-recipe" alt="">
   <div class="recipe-and-image">
-    <div class="dropdown manage-dropdown">
-      <button class="btn btn-secondary dropdown-toggle" appDropdown type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Manage Recipe
-      </button>
+    <div class="dropdown manage-dropdown" appDropdown>
+      <input class="btn btn-secondary dropdown-toggle" appDropdown type="button" id="dropdownMenuButton"
+             value="Manage Recipe" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" (click)="addToShoppingLIst(recipe)">To Shopping List</a>
         <a class="dropdown-item" (click)="onEditRecipe()">Edit Recipe</a>
